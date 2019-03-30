@@ -13,6 +13,8 @@
       slurp
       split-at-line-breaks
       (mapcat #(string/split % #"-"))
+      (filter #(>= (count %) 2))
+      (map string/lower-case)
       set))
 
 (defonce words (build-dictionary pt-br))
